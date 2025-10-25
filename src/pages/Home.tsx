@@ -1,5 +1,6 @@
 import React from "react";
-import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
+import Map from "../components/Map";
+import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
 import AnimatedSection from "../components/AnimatedSection";
 import styles from "./Home.module.css";
 import Full_Illustration from "../assets/Full_Illustration.png";
@@ -13,8 +14,6 @@ import Team_2 from "../assets/Team_2.png";
 import DomeGallery from "../components/DomeGallery";
 import Poster1 from "../assets/poster_1.jpg";
 import Poster2 from "../assets/poster_2.jpg";
-
-const API_KEY_GOOGLE_MAPS = "";
 
 const Home: React.FC = () => {
     const events = [
@@ -414,19 +413,7 @@ const Home: React.FC = () => {
                             </div>
                             <div className={styles.venueMap}>
                                 <div className={styles.mapPlaceholder}>
-                                    <MapPin className={styles.mapIcon} />
-                                    <iframe
-                                        title="VIT Chennai map"
-                                        width="600"
-                                        height="450"
-                                        style={{ border: 0 }}
-                                        loading="lazy"
-                                        allowFullScreen
-                                        src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZx9Jjq9ZUjoRLX11GxNCS5Q&key=${API_KEY_GOOGLE_MAPS}`}
-                                    />
-                                    <p className={styles.mapCoordinates}>
-                                        Lat: 12.8406, Lng: 80.1534
-                                    </p>
+                                    <Map />
                                 </div>
                             </div>
                         </div>
